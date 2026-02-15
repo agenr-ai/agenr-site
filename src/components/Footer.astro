@@ -3,25 +3,48 @@ const today = new Date();
 ---
 
 <footer>
-	<p>agenr — local-first memory for AI agents</p>
-	<p><a href="https://github.com/agenr-ai/agenr" target="_blank">GitHub</a></p>
-	<p class="copyright">&copy; {today.getFullYear()} agenr</p>
+	<div class="footer-inner">
+		<p class="brand gradient-text">agenr</p>
+		<p class="desc">Local-first memory for AI agents</p>
+		<p class="links">
+			<a href="https://github.com/agenr-ai/agenr" target="_blank">GitHub</a>
+			<span class="sep">·</span>
+			<a href="/blog">Blog</a>
+		</p>
+		<p class="copyright">&copy; {today.getFullYear()} agenr</p>
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 4em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
+		padding: 3em 1em 2em;
+		border-top: 1px solid var(--border);
 		text-align: center;
 	}
-	footer a {
-		color: rgb(var(--gray));
+	.footer-inner {
+		max-width: 960px;
+		margin: 0 auto;
 	}
-	footer a:hover {
-		color: rgb(var(--gray-dark));
+	.brand {
+		font-size: 1.2em;
+		font-weight: 800;
+		margin-bottom: 0.25em;
 	}
+	.desc {
+		color: var(--text-secondary);
+		font-size: 0.9em;
+		margin-bottom: 1em;
+	}
+	.links a {
+		color: var(--muted);
+		text-decoration: none;
+		font-size: 0.9em;
+		transition: color 0.2s;
+	}
+	.links a:hover { color: var(--text); }
+	.sep { color: var(--muted); margin: 0 0.5em; }
 	.copyright {
-		font-size: 0.85em;
+		font-size: 0.8em;
+		color: var(--muted);
 		margin-top: 1em;
 	}
 </style>

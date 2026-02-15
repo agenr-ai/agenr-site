@@ -21,142 +21,392 @@ const mcpConfig = `{
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section class="hero">
-				<h1>agenr</h1>
+		<main class="landing">
+			<!-- Nebula glow -->
+			<div class="nebula"></div>
+
+			<section class="hero fade-in-up">
+				<h1 class="gradient-text">agenr</h1>
 				<p class="pronunciation">/ˈeɪ·dʒən·ər/</p>
-				<p class="tagline">You've had this conversation before. Your AI hasn't.</p>
+				<p class="tagline">You've had this conversation before.<br/>Your AI hasn't.</p>
 			</section>
 
-			<section class="what">
-				<h2>What it does</h2>
+			<section class="what fade-in-up">
+				<h2 class="gradient-text">What it does</h2>
 				<p>agenr gives your AI agents persistent, structured memory — across tools, across sessions.</p>
-				<div class="flow">
-					<div class="step"><strong>Extract</strong><br/>Pull structured knowledge from conversations</div>
-					<div class="step"><strong>Store</strong><br/>Save to a local SQLite database with embeddings</div>
-					<div class="step"><strong>Recall</strong><br/>Semantic search when context matters</div>
-					<div class="step"><strong>Consolidate</strong><br/>Strengthen, merge, and decay over time</div>
+			</section>
+
+			<!-- Terminal code block -->
+			<section class="terminal-section fade-in-up">
+				<div class="terminal">
+					<div class="terminal-header">
+						<span class="dot red"></span>
+						<span class="dot yellow"></span>
+						<span class="dot green"></span>
+						<span class="terminal-title">agenr</span>
+					</div>
+					<div class="terminal-body">
+						<code><span class="prompt">$</span> agenr extract session.jsonl</code>
+						<code class="output">✓ Extracted 12 knowledge entries</code>
+						<code class="output">  5 facts · 3 preferences · 2 procedures · 2 entities</code>
+						<code>&nbsp;</code>
+						<code><span class="prompt">$</span> agenr recall "database schema"</code>
+						<code class="output">┌ 3 results (0.89 relevance)</code>
+						<code class="output">│ [fact] Users table has soft-delete via deleted_at</code>
+						<code class="output">│ [procedure] Run migrations with: pnpm db:push</code>
+						<code class="output">└ [fact] Using Drizzle ORM with PostgreSQL</code>
+					</div>
 				</div>
 			</section>
 
-			<section class="why">
-				<h2>How it's different</h2>
-				<ul>
-					<li><strong>Structured extraction</strong> — not raw text dumps. Entities, facts, preferences, and procedures with confidence scores.</li>
-					<li><strong>Memory that lives</strong> — entries strengthen with repeated use and decay when stale.</li>
-					<li><strong>Consolidation</strong> — duplicates merge, contradictions resolve, noise fades. Your knowledge base gets cleaner over time.</li>
-					<li><strong>Cross-tool via MCP</strong> — any AI tool that speaks Model Context Protocol can read and write to agenr.</li>
-					<li><strong>Local-first</strong> — your data stays on your machine. SQLite + local embeddings. No cloud required.</li>
-				</ul>
+			<!-- Bento grid -->
+			<section class="bento fade-in-up">
+				<div class="bento-grid">
+					<div class="bento-card">
+						<div class="bento-icon">🧠</div>
+						<h3>Structured extraction</h3>
+						<p>Not raw text dumps. Entities, facts, preferences, and procedures with confidence scores.</p>
+					</div>
+					<div class="bento-card">
+						<div class="bento-icon">💫</div>
+						<h3>Memory that lives</h3>
+						<p>Entries strengthen with repeated use and decay when stale. Like real memory.</p>
+					</div>
+					<div class="bento-card">
+						<div class="bento-icon">🔄</div>
+						<h3>Consolidation</h3>
+						<p>Duplicates merge, contradictions resolve, noise fades. Your knowledge base gets cleaner over time.</p>
+					</div>
+					<div class="bento-card">
+						<div class="bento-icon">🔌</div>
+						<h3>Cross-tool via MCP</h3>
+						<p>Any AI tool that speaks Model Context Protocol can read and write to agenr.</p>
+					</div>
+					<div class="bento-card wide">
+						<div class="bento-icon">🏠</div>
+						<h3>Local-first</h3>
+						<p>Your data stays on your machine. SQLite + local embeddings. No cloud required.</p>
+					</div>
+				</div>
 			</section>
 
-			<section class="quickstart">
-				<h2>Quick start</h2>
-				<pre><code>npm install -g agenr
+			<!-- Quick start -->
+			<section class="quickstart fade-in-up">
+				<h2 class="gradient-text">Quick start</h2>
+				<div class="steps">
+					<div class="step-item">
+						<span class="step-num">1</span>
+						<div>
+							<h4>Install</h4>
+							<pre><code>npm install -g agenr
 agenr setup</code></pre>
-
-				<h3>MCP configuration</h3>
-				<p>Add to your AI tool's MCP config:</p>
-				<pre><code>{mcpConfig}</code></pre>
+						</div>
+					</div>
+					<div class="step-item">
+						<span class="step-num">2</span>
+						<div>
+							<h4>Add MCP config</h4>
+							<pre><code>{mcpConfig}</code></pre>
+						</div>
+					</div>
+					<div class="step-item">
+						<span class="step-num">3</span>
+						<div>
+							<h4>Use it</h4>
+							<p>Your AI agent now has persistent memory. Extract knowledge from conversations, recall it when needed.</p>
+						</div>
+					</div>
+				</div>
 			</section>
 
-			<section class="closing">
-				<p>We're not claiming to have solved AI memory. We're sharing an approach that works for us.</p>
-				<p class="links">
-					<a href="https://github.com/agenr-ai/agenr" class="btn">GitHub</a>
-					<a href="/blog" class="btn btn-secondary">Blog</a>
-				</p>
+			<!-- Works with -->
+			<section class="works-with fade-in-up">
+				<h2 class="gradient-text">Works with</h2>
+				<div class="tools-grid">
+					<div class="tool">Claude Code</div>
+					<div class="tool">Codex</div>
+					<div class="tool">Cursor</div>
+					<div class="tool">OpenClaw</div>
+					<div class="tool">Any MCP client</div>
+				</div>
+			</section>
+
+			<!-- CTA -->
+			<section class="cta fade-in-up">
+				<p class="cta-text">We're not claiming to have solved AI memory.<br/>We're sharing an approach that works for us.</p>
+				<div class="cta-links">
+					<a href="https://github.com/agenr-ai/agenr" class="btn-primary">
+						Star on GitHub →
+					</a>
+					<a href="/blog" class="btn-secondary">
+						Read the blog
+					</a>
+				</div>
 			</section>
 		</main>
 		<Footer />
+
+		<script>
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					}
+				});
+			}, { threshold: 0.1 });
+			document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+		</script>
 	</body>
 </html>
 
 <style>
-	main {
-		max-width: 720px;
-		margin: 0 auto;
-		padding: 1em;
+	.landing {
+		max-width: 960px;
+		position: relative;
 	}
+
+	/* Nebula glow */
+	.nebula {
+		position: fixed;
+		top: -200px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 800px;
+		height: 600px;
+		background: radial-gradient(ellipse at center,
+			rgba(58, 75, 180, 0.12) 0%,
+			rgba(13, 88, 166, 0.06) 40%,
+			transparent 70%);
+		pointer-events: none;
+		z-index: 0;
+		animation: nebula-pulse 8s ease-in-out infinite alternate;
+	}
+	@keyframes nebula-pulse {
+		0% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+		100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+	}
+
+	/* Hero */
 	.hero {
 		text-align: center;
-		padding: 3em 0 2em;
+		padding: 5em 0 3em;
+		position: relative;
+		z-index: 1;
 	}
 	.hero h1 {
-		font-size: 3.5em;
+		font-size: 5em;
+		font-weight: 900;
+		letter-spacing: -0.03em;
 		margin: 0;
 	}
 	.pronunciation {
-		color: rgb(var(--gray));
+		color: var(--muted);
 		font-style: italic;
 		margin: 0.25em 0;
+		font-size: 1.1em;
 	}
 	.tagline {
-		font-size: 1.3em;
-		margin-top: 0.5em;
+		font-size: 1.4em;
+		color: var(--text-secondary);
+		margin-top: 0.75em;
+		line-height: 1.5;
 	}
-	section {
-		margin-bottom: 2.5em;
-	}
-	h2 {
-		border-bottom: 1px solid rgba(var(--gray-light), 0.5);
-		padding-bottom: 0.3em;
-	}
-	.flow {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.step {
-		padding: 1em;
-		border: 1px solid rgba(var(--gray-light), 0.5);
-		border-radius: 8px;
+
+	/* What */
+	.what {
 		text-align: center;
+		margin-bottom: 2em;
 	}
-	.why ul {
-		list-style: none;
+	.what p {
+		color: var(--text-secondary);
+		font-size: 1.15em;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	/* Terminal */
+	.terminal-section {
+		margin-bottom: 3em;
+	}
+	.terminal {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		overflow: hidden;
+	}
+	.terminal-header {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 12px 16px;
+		background: var(--surface-2);
+		border-bottom: 1px solid var(--border);
+	}
+	.dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+	}
+	.dot.red { background: #f0544c; }
+	.dot.yellow { background: #f0c844; }
+	.dot.green { background: #44d48c; }
+	.terminal-title {
+		color: var(--muted);
+		font-size: 0.8em;
+		margin-left: 8px;
+	}
+	.terminal-body {
+		padding: 1.25em 1.5em;
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	.terminal-body code {
+		background: none;
 		padding: 0;
+		font-size: 0.88em;
+		color: var(--text);
+		display: block;
+		font-family: 'SF Mono', 'Fira Code', monospace;
 	}
-	.why li {
-		margin-bottom: 0.75em;
-		padding-left: 1.5em;
-		position: relative;
+	.prompt { color: var(--teal-bright); }
+	.terminal-body .output { color: var(--text-secondary); }
+
+	/* Bento grid */
+	.bento { margin-bottom: 3em; }
+	.bento-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1em;
 	}
-	.why li::before {
-		content: "→";
-		position: absolute;
-		left: 0;
+	.bento-card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1.5em;
+		transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 	}
-	pre {
-		background: rgb(var(--gray-dark));
-		color: #f0f0f0;
-		padding: 1em;
+	.bento-card:hover {
+		transform: translateY(-2px);
+		border-color: var(--border-hover);
+		box-shadow: 0 8px 32px var(--glow-1);
+	}
+	.bento-card.wide { grid-column: 1 / -1; }
+	.bento-icon { font-size: 1.5em; margin-bottom: 0.5em; }
+	.bento-card h3 {
+		font-size: 1.1em;
+		margin-bottom: 0.5em;
+		color: var(--text);
+	}
+	.bento-card p {
+		color: var(--text-secondary);
+		font-size: 0.95em;
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	/* Quick start */
+	.quickstart { margin-bottom: 3em; }
+	.quickstart h2 { margin-bottom: 1.5em; }
+	.steps { display: flex; flex-direction: column; gap: 1.5em; }
+	.step-item {
+		display: flex;
+		gap: 1.25em;
+		align-items: flex-start;
+	}
+	.step-num {
+		flex-shrink: 0;
+		width: 36px;
+		height: 36px;
+		background: var(--gradient);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 0.9em;
+		color: white;
+		margin-top: 0.2em;
+	}
+	.step-item h4 {
+		margin-bottom: 0.5em;
+		color: var(--text);
+	}
+	.step-item pre {
+		margin: 0.5em 0 0;
+	}
+	.step-item p {
+		color: var(--text-secondary);
+		margin: 0;
+	}
+
+	/* Works with */
+	.works-with { margin-bottom: 3em; text-align: center; }
+	.works-with h2 { margin-bottom: 1.5em; }
+	.tools-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+		justify-content: center;
+	}
+	.tool {
+		padding: 0.6em 1.25em;
+		background: var(--surface);
+		border: 1px solid var(--border);
 		border-radius: 8px;
-		overflow-x: auto;
+		color: var(--text-secondary);
+		font-size: 0.95em;
+		font-weight: 500;
+		transition: border-color 0.2s;
 	}
-	.closing {
+	.tool:hover { border-color: var(--border-hover); }
+
+	/* CTA */
+	.cta {
 		text-align: center;
-		font-size: 1.05em;
+		padding: 3em 0;
 	}
-	.links {
-		margin-top: 1.5em;
+	.cta-text {
+		font-size: 1.15em;
+		color: var(--text-secondary);
+		margin-bottom: 1.5em;
+	}
+	.cta-links {
 		display: flex;
 		gap: 1em;
 		justify-content: center;
+		flex-wrap: wrap;
 	}
-	.btn {
+	.btn-primary {
 		display: inline-block;
-		padding: 0.6em 1.5em;
-		border-radius: 6px;
-		text-decoration: none;
-		background: rgb(var(--black));
+		padding: 0.7em 1.75em;
+		background: var(--gradient);
 		color: white;
-		font-weight: bold;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: opacity 0.2s;
 	}
+	.btn-primary:hover { opacity: 0.9; color: white; }
 	.btn-secondary {
-		background: transparent;
-		border: 2px solid rgb(var(--black));
-		color: rgb(var(--black));
+		display: inline-block;
+		padding: 0.7em 1.75em;
+		border: 1px solid var(--border);
+		color: var(--text-secondary);
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 500;
+		transition: border-color 0.2s, color 0.2s;
+	}
+	.btn-secondary:hover {
+		border-color: var(--border-hover);
+		color: var(--text);
+	}
+
+	@media (max-width: 720px) {
+		.hero h1 { font-size: 3.5em; }
+		.tagline { font-size: 1.15em; }
+		.bento-grid { grid-template-columns: 1fr; }
+		.bento-card.wide { grid-column: auto; }
 	}
 </style>

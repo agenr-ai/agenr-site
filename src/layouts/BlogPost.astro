@@ -20,21 +20,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: 100%;
 				margin: 0;
 			}
-			.hero-image {
-				width: 100%;
-			}
+			.hero-image { width: 100%; }
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+				box-shadow: 0 8px 32px var(--glow-1);
 			}
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: var(--text);
 			}
 			.title {
 				margin-bottom: 1em;
@@ -47,7 +45,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--muted);
 			}
 			.last-updated-on {
 				font-style: italic;
@@ -66,13 +64,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+							{updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)}
 						</div>
 						<h1>{title}</h1>
 						<hr />
