@@ -1,0 +1,162 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const mcpConfig = `{
+  "mcpServers": {
+    "agenr": {
+      "command": "npx",
+      "args": ["-y", "agenr", "mcp"]
+    }
+  }
+}`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<h1>agenr</h1>
+				<p class="pronunciation">/ˈeɪ·dʒən·ər/</p>
+				<p class="tagline">You've had this conversation before. Your AI hasn't.</p>
+			</section>
+
+			<section class="what">
+				<h2>What it does</h2>
+				<p>agenr gives your AI agents persistent, structured memory — across tools, across sessions.</p>
+				<div class="flow">
+					<div class="step"><strong>Extract</strong><br/>Pull structured knowledge from conversations</div>
+					<div class="step"><strong>Store</strong><br/>Save to a local SQLite database with embeddings</div>
+					<div class="step"><strong>Recall</strong><br/>Semantic search when context matters</div>
+					<div class="step"><strong>Consolidate</strong><br/>Strengthen, merge, and decay over time</div>
+				</div>
+			</section>
+
+			<section class="why">
+				<h2>How it's different</h2>
+				<ul>
+					<li><strong>Structured extraction</strong> — not raw text dumps. Entities, facts, preferences, and procedures with confidence scores.</li>
+					<li><strong>Memory that lives</strong> — entries strengthen with repeated use and decay when stale.</li>
+					<li><strong>Consolidation</strong> — duplicates merge, contradictions resolve, noise fades. Your knowledge base gets cleaner over time.</li>
+					<li><strong>Cross-tool via MCP</strong> — any AI tool that speaks Model Context Protocol can read and write to agenr.</li>
+					<li><strong>Local-first</strong> — your data stays on your machine. SQLite + local embeddings. No cloud required.</li>
+				</ul>
+			</section>
+
+			<section class="quickstart">
+				<h2>Quick start</h2>
+				<pre><code>npm install -g agenr
+agenr setup</code></pre>
+
+				<h3>MCP configuration</h3>
+				<p>Add to your AI tool's MCP config:</p>
+				<pre><code>{mcpConfig}</code></pre>
+			</section>
+
+			<section class="closing">
+				<p>We're not claiming to have solved AI memory. We're sharing an approach that works for us.</p>
+				<p class="links">
+					<a href="https://github.com/agenr-ai/agenr" class="btn">GitHub</a>
+					<a href="/blog" class="btn btn-secondary">Blog</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 1em;
+	}
+	.hero {
+		text-align: center;
+		padding: 3em 0 2em;
+	}
+	.hero h1 {
+		font-size: 3.5em;
+		margin: 0;
+	}
+	.pronunciation {
+		color: rgb(var(--gray));
+		font-style: italic;
+		margin: 0.25em 0;
+	}
+	.tagline {
+		font-size: 1.3em;
+		margin-top: 0.5em;
+	}
+	section {
+		margin-bottom: 2.5em;
+	}
+	h2 {
+		border-bottom: 1px solid rgba(var(--gray-light), 0.5);
+		padding-bottom: 0.3em;
+	}
+	.flow {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.step {
+		padding: 1em;
+		border: 1px solid rgba(var(--gray-light), 0.5);
+		border-radius: 8px;
+		text-align: center;
+	}
+	.why ul {
+		list-style: none;
+		padding: 0;
+	}
+	.why li {
+		margin-bottom: 0.75em;
+		padding-left: 1.5em;
+		position: relative;
+	}
+	.why li::before {
+		content: "→";
+		position: absolute;
+		left: 0;
+	}
+	pre {
+		background: rgb(var(--gray-dark));
+		color: #f0f0f0;
+		padding: 1em;
+		border-radius: 8px;
+		overflow-x: auto;
+	}
+	.closing {
+		text-align: center;
+		font-size: 1.05em;
+	}
+	.links {
+		margin-top: 1.5em;
+		display: flex;
+		gap: 1em;
+		justify-content: center;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.6em 1.5em;
+		border-radius: 6px;
+		text-decoration: none;
+		background: rgb(var(--black));
+		color: white;
+		font-weight: bold;
+	}
+	.btn-secondary {
+		background: transparent;
+		border: 2px solid rgb(var(--black));
+		color: rgb(var(--black));
+	}
+</style>

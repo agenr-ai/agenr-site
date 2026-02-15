@@ -1,0 +1,27 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<p>agenr — local-first memory for AI agents</p>
+	<p><a href="https://github.com/agenr-ai/agenr" target="_blank">GitHub</a></p>
+	<p class="copyright">&copy; {today.getFullYear()} agenr</p>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 4em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	footer a {
+		color: rgb(var(--gray));
+	}
+	footer a:hover {
+		color: rgb(var(--gray-dark));
+	}
+	.copyright {
+		font-size: 0.85em;
+		margin-top: 1em;
+	}
+</style>
