@@ -557,7 +557,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       <h1><span class="gradient-text">Agent &middot; Memory</span></h1>
       <div class="etymology" id="etymology">
         <span class="etymology-inner">
-          <span class="ch lit">A</span><span class="ch lit">G</span><span class="ch lit">E</span><span class="ch lit">N</span><span class="ch dim">t</span><span class="ch space"> </span><span class="ch dim">m</span><span class="ch dim">e</span><span class="ch dim">m</span><span class="ch dim">o</span><span class="ch lit">R</span><span class="ch dim">y</span>
+          <span class="ch lit">A</span><span class="ch lit">G</span><span class="ch lit">E</span><span class="ch lit">N</span><span class="ch dim">T</span><span class="ch space"> </span><span class="ch dim">M</span><span class="ch dim">E</span><span class="ch dim">M</span><span class="ch dim">O</span><span class="ch lit">R</span><span class="ch dim">Y</span>
           <span class="pronunciation">AY-GEN-ER</span>
         </span>
       </div>
@@ -658,7 +658,9 @@ agenr extract session.jsonl --json | agenr store
         <br>
         <span>
           <span class="agent-name">Claude Code</span>
-          <span class="agent-name">Codex</span>
+          <span class="agent-name">Codex</span>Extension-led adapter selection first, but if a .txt file happens to contain valid
+ JSONL, the text adapter should detect that and delegate to the JSONL adapter. Don't break something that
+ already works - sniff the content as a fallback.
           <span class="agent-name">Cursor</span>
           <span class="agent-name">OpenClaw</span>
           <span class="agent-name">Any MCP Client</span>
